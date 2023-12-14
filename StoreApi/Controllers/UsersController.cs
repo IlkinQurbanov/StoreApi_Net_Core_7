@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StoreApi.Filters;
 using StoreApi.Models;
 using StoreApi.Sevcies;
 using System.Security.Cryptography.X509Certificates;
@@ -37,6 +38,7 @@ namespace StoreApi.Controllers
 
 
         [HttpGet("info")]
+        [DebugFilter]
         public IActionResult GetInfo(int? id, string? name, int? page,[FromServices] IConfiguration configuration,
             [FromServices] TimeService timeService)
         {
